@@ -42,7 +42,7 @@ router.post('/:id/delete' (req, res, next) =>{
 })
 
 //Iteration 9
-router.get('/:id', (req, res, next) =>{
+router.post('/:id', (req, res, next) =>{
     const {title, genre, plot, cast} = req.body;
     Movie.update({_id: req.params.id}, {$set: {title, genre, plot, cast}})
         .then(updated => res.status(200).json({msg: 'updated'}))
