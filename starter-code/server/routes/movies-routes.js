@@ -35,7 +35,7 @@ router.get('/:id', (req, res, next) =>{
 })
 
 //Iteration 8
-router.post('/:id/delete' (req, res, next) =>{
+router.post('/:id/delete', (req, res, next) =>{
     Movie.findByIdAndRemove({_id: req.params.id})
     .then(success => res.status(200).json({msg: success}))
     .catch(error => res.status(204).json({msg: error}))
